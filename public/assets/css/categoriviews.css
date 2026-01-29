@@ -1,0 +1,104 @@
+/* =========================
+   GRID LAYOUT
+========================= */
+.category-view-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+.category-view-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #ffffff;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  transition: 0.2s ease;
+}
+
+.category-view-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+.category-view-image {
+  height: 140px;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-view-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  padding: 14px;
+}
+
+.category-view-placeholder {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+
+/* =========================
+   BODY
+========================= */
+.category-view-body {
+  padding: 18px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+.category-view-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+.category-view-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.category-view-actions .btn {
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 8px;
+  border: none;
+}
+
+.btn-category-edit {
+  background: #f6d6a8;
+  color: #6b4a1e;
+}
+
+.btn-category-view {
+  background: #dcd3f0;
+  color: #4b3b78;
+}

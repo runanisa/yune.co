@@ -1,0 +1,107 @@
+/* BODY */
+.auth-body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #b5e3ff, #f7b2d9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* WRAPPER */
+.auth-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+}
+
+/* CARD */
+.auth-card {
+    background: #ffffff;
+    border-radius: 24px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* LEFT SIDE */
+.auth-left {
+    width: 50%;
+    background: linear-gradient(160deg, #e8f6ff, #fde7f3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 40px;
+}
+
+/* IMAGE */
+.auth-illustration {
+    width: 100%;
+    max-width: 420px;   /* kunci biar nggak kegedean */
+    height: auto;
+    object-fit: contain;
+}
+
+
+
+/* RIGHT SIDE */
+.auth-right {
+    width: 50%;
+    padding: 60px 50px;
+}
+
+.auth-right h3 {
+    font-weight: 700;
+    color: #344767;
+}
+
+.auth-right h3 span {
+    background: linear-gradient(90deg, #4facfe, #f093fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* INPUT */
+.form-control {
+    border-radius: 12px;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+}
+
+.form-control:focus {
+    border-color: #9ad0ff;
+    box-shadow: 0 0 0 0.2rem rgba(154, 208, 255, 0.3);
+}
+
+/* BUTTON */
+.btn-login {
+    background: linear-gradient(90deg, #4facfe, #f093fb);
+    color: #fff;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(240, 147, 251, 0.4);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .auth-card {
+        flex-direction: column;
+    }
+
+    .auth-left {
+        display: none;
+    }
+
+    .auth-right {
+        width: 100%;
+        padding: 40px 30px;
+    }
+}

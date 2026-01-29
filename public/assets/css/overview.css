@@ -1,0 +1,183 @@
+/* ================= CATEGORY ================= */
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    background: #f5f7fb;
+    border-radius: 14px;
+    text-decoration: none;
+    color: #333;
+    font-size: 13px;
+    gap: 6px;
+    transition: 0.2s;
+}
+
+.category-card img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
+.category-card p {
+    margin: 0;
+}
+
+.category-card:hover {
+    background: #e6ecff;
+}
+
+.category-card.active {
+    background: #7da6ff;
+    color: #ffffff;
+}
+
+.category-card.active p {
+    color: #ffffff;
+}
+
+/* PRODUCT CARD */
+.product-card {
+    width: 220px;              /* ⬅️ biar ga melebar */
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    padding: 12px;
+}
+
+.product-image {
+    width: 100%;
+    height: 140px;
+    border-radius: 10px;
+    overflow: hidden;        /* WAJIB */
+    background: #f5f7fb;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* ⬅️ KUNCI UTAMA */
+    display: block;
+}
+
+
+.product-card h5 {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.product-card .price {
+    font-size: 13px;
+}
+
+.product-card .btn {
+    background: #7da6ff;
+    border: none;
+    border-radius: 10px;
+    font-size: 13px;
+    padding: 6px 10px;
+}
+
+.product-card .btn:hover {
+    background: #5f8cff;
+}
+
+
+
+/* ================= CART ================= */
+
+.cart {
+    position: sticky;
+    top: 20px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.cart h5 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.list-group-item {
+    border: none;
+    padding: 8px 0;
+}
+
+.list-group-item + .list-group-item {
+    border-top: 1px dashed #eee;
+}
+
+.cart .btn-success {
+    background: #2eb872;
+    border: none;
+    border-radius: 12px;
+}
+
+
+/* ===== KERANJANG STICKY ===== */
+.cart {
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+}
+
+/* ===== CATEGORY SCROLL ===== */
+.category-wrapper {
+    overflow-x: auto;
+}
+
+.category-scroll {
+    display: flex;
+    white-space: nowrap;
+    padding-bottom: 6px;
+}
+
+.category-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.category-scroll::-webkit-scrollbar-thumb {
+    background: #d0d7ff;
+    border-radius: 10px;
+}
+
+/* ===============================
+   STOCK MODAL (OVERVIEW)
+=============================== */
+.stock-modal {
+    border-radius: 18px;
+    border: none;
+    box-shadow: 0 20px 45px rgba(59,130,246,0.25);
+}
+
+.stock-modal .modal-header {
+    background: #eff6ff;
+    border-bottom: 1px solid #dbeafe;
+}
+
+.stock-modal .modal-title {
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+.stock-modal .modal-body {
+    font-size: 15px;
+    color: #1f2937;
+}
+
+.stock-modal .modal-footer {
+    border-top: none;
+}
+
+.stock-modal .btn-primary {
+    background: #3b82f6;
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+}

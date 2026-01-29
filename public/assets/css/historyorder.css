@@ -1,0 +1,77 @@
+/* ===============================
+   PAGE TITLE
+=============================== */
+.container h3 {
+    font-weight: 700;
+    color: #1e3a8a; /* biru tua lembut */
+}
+
+
+/* ===============================
+   ORDER CARD
+=============================== */
+.card {
+    border-radius: 16px;
+    border: 1px solid #dbeafe; /* biru pastel */
+    box-shadow: 0 6px 18px rgba(59,130,246,0.12);
+    overflow: hidden;
+}
+
+
+/* ===============================
+   HEADER
+=============================== */
+.card-header {
+    background: #eff6ff; /* biru pastel */
+    border-bottom: 1px solid #dbeafe;
+    font-weight: 600;
+    color: #1e40af;
+}
+
+
+/* ===============================
+   TABLE
+=============================== */
+.table thead th {
+    font-size: 14px;
+    border-bottom: 1px solid #dbeafe;
+    color: #1e40af;
+}
+
+.table tbody td {
+    font-size: 14px;
+    vertical-align: middle;
+    border-bottom: 1px dashed #bfdbfe;
+}
+
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ===============================
+   ALIGN
+=============================== */
+.table th:nth-child(2),
+.table td:nth-child(2) {
+    text-align: center;
+    width: 80px;
+}
+
+.table th:nth-child(3),
+.table td:nth-child(3),
+.table th:nth-child(4),
+.table td:nth-child(4) {
+    text-align: right;
+    white-space: nowrap;
+}
+
+
+/* ===============================
+   FOOTER / TOTAL
+=============================== */
+.card-footer {
+    background: #eff6ff;
+    font-size: 15px;
+    color: #1e3a8a;
+}
