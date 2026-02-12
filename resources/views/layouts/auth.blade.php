@@ -9,12 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/css/loginon.css') }}">
 </head>
-<body>
 <body class="auth-body">
     <div class="auth-wrapper">
         @yield('content')
     </div>
-</body>
-
 </body>
 </html>

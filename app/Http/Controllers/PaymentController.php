@@ -54,13 +54,19 @@ class PaymentController extends Controller
             $product->save();
         }
 
-        // ✅ CETAK STRUK
-        if ($request->print == 1) {
-            return redirect()->route('payment.receipt', $order->id);
+        return redirect()->route('payment.success', $order->id);
+    }
+
+    // HALAMAN BERHASIL
+    public function success(Order $order)
+    {
+        if ($order->status !== 'paid') {
+            return redirect()->route('overview');
         }
 
-        return redirect()->route('overview')
-            ->with('success', 'Pembayaran berhasil');
+        $order->load('orderDetails.product');
+
+        return view('payment.success', compact('order'));
     }
 
     // CETAK STRUK (PDF)

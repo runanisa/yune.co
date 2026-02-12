@@ -1,28 +1,31 @@
 /* ===============================
    PAGE TITLE
-=============================== */
+ =============================== */
 .container h3 {
     font-weight: 700;
-    color: #1e3a8a; /* biru tua lembut */
+    color: #1e3a8a;
+    /* biru tua lembut */
 }
 
 
 /* ===============================
    ORDER CARD
-=============================== */
+ =============================== */
 .card {
     border-radius: 16px;
-    border: 1px solid #dbeafe; /* biru pastel */
-    box-shadow: 0 6px 18px rgba(59,130,246,0.12);
+    border: 1px solid #dbeafe;
+    /* biru pastel */
+    box-shadow: 0 6px 18px rgba(59, 130, 246, 0.12);
     overflow: hidden;
 }
 
 
 /* ===============================
    HEADER
-=============================== */
+ =============================== */
 .card-header {
-    background: #eff6ff; /* biru pastel */
+    background: #eff6ff;
+    /* biru pastel */
     border-bottom: 1px solid #dbeafe;
     font-weight: 600;
     color: #1e40af;
@@ -31,7 +34,7 @@
 
 /* ===============================
    TABLE
-=============================== */
+ =============================== */
 .table thead th {
     font-size: 14px;
     border-bottom: 1px solid #dbeafe;
@@ -51,7 +54,7 @@
 
 /* ===============================
    ALIGN
-=============================== */
+ =============================== */
 .table th:nth-child(2),
 .table td:nth-child(2) {
     text-align: center;
@@ -69,9 +72,28 @@
 
 /* ===============================
    FOOTER / TOTAL
-=============================== */
+ =============================== */
 .card-footer {
     background: #eff6ff;
     font-size: 15px;
     color: #1e3a8a;
+}
+
+@media (max-width: 991.98px) {
+
+    .table thead th,
+    .table tbody td {
+        font-size: 11px;
+        padding: 8px 4px;
+    }
+
+    .container h3 {
+        font-size: 1.25rem;
+    }
+
+    .card-header,
+    .card-footer {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
 }

@@ -9,7 +9,7 @@
 
 /* =========================
  GRID LAYOUT
-========================= */
+ ========================= */
 .product-view-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -18,11 +18,11 @@
 
 /* =========================
  CARD
-========================= */
+ ========================= */
 .product-view-card {
   background: #ffffff;
   border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   padding: 14px;
 
   display: flex;
@@ -34,12 +34,12 @@
 
 .product-view-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
 /* =========================
  IMAGE (FULL TANPA SISA)
-========================= */
+ ========================= */
 .product-view-image {
   width: 100%;
   height: 160px;
@@ -55,7 +55,8 @@
 .product-view-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* ⬅️ FULL SATU KOTAK */
+  object-fit: cover;
+  /* ⬅️ FULL SATU KOTAK */
   display: block;
 }
 
@@ -66,7 +67,7 @@
 
 /* =========================
  BODY
-========================= */
+ ========================= */
 .product-view-body {
   flex-grow: 1;
   padding-top: 12px;
@@ -88,7 +89,7 @@
 
 /* =========================
  ACTIONS
-========================= */
+ ========================= */
 .product-view-actions {
   display: flex;
   gap: 8px;
@@ -105,7 +106,7 @@
 
 /* =========================
  BUTTON COLOR
-========================= */
+ ========================= */
 .btn-product-edit {
   background: #ffe1b3;
   color: #6b4a1e;
@@ -113,4 +114,32 @@
 
 .btn-product-edit:hover {
   background: #ffd28a;
+}
+
+@media (max-width: 991.98px) {
+  .product-view-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+  }
+
+  .product-view-card {
+    padding: 10px;
+  }
+
+  .product-view-image {
+    height: 120px;
+  }
+
+  .product-view-title {
+    font-size: 13px;
+  }
+
+  .product-view-price {
+    font-size: 12px;
+  }
+
+  .product-view-actions .btn {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
 }

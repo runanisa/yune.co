@@ -23,25 +23,15 @@
             <i class="bi bi-clock-history"></i>
             <span>History</span>
         </a>
-    </nav>
 
-    <div class="sidebar-bottom">
-        <div class="dropdown dropup">
-            <button class="setting-btn" data-bs-toggle="dropdown">
-                <i class="bi bi-gear"></i>
+        <div class="sidebar-divider"></div>
+
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit" class="logout-link">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Logout</span>
             </button>
-
-            <ul class="dropdown-menu">
-                <li>
-                    <form action="{{ route('logout') }}" method="POST">
-                        @csrf
-                        <button type="submit" class="dropdown-item">
-                            <i class="bi bi-box-arrow-right"></i>
-                            Logout
-                        </button>
-                    </form>
-                </li>
-            </ul>
-        </div>
-    </div>
+        </form>
+    </nav>
 </aside>

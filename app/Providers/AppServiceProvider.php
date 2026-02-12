@@ -18,6 +18,18 @@ class AppServiceProvider extends ServiceProvider
         if (str_contains(config('app.url'), 'ngrok-free.dev')) {
             URL::forceScheme('https');
         }
+
+        // Share Cart Data globally
+        \Illuminate\Support\Facades\View::composer('*', function ($view) {
+            $pendingOrder = \App\Models\Order::with('orderDetails.product')
+                ->where('status', 'pending')
+                ->first();
+            
+            $cartCount = $pendingOrder ? $pendingOrder->orderDetails->sum('quantity') : 0;
+            
+            $view->with('globalOrder', $pendingOrder);
+            $view->with('cartCount', $cartCount);
+        });
     }
 }
 

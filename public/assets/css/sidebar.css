@@ -1,5 +1,5 @@
 .sidebar {
-    width: 260px;
+    width: var(--sidebar-width, 280px);
     height: 100vh;
     position: fixed;
     left: 0;
@@ -7,6 +7,7 @@
     background: #7da6ff;
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease;
 }
 
 .sidebar-logo {
@@ -27,7 +28,8 @@
     padding: 10px;
 }
 
-.sidebar-menu a {
+.sidebar-menu a,
+.sidebar-menu .logout-link {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -36,13 +38,21 @@
     color: #ffffff;
     text-decoration: none;
     font-size: 14px;
+    background: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 
-.sidebar-menu a i {
+.sidebar-menu a i,
+.sidebar-menu .logout-link i {
     font-size: 18px;
 }
 
-.sidebar-menu a:hover {
+.sidebar-menu a:hover,
+.sidebar-menu .logout-link:hover {
     background: rgba(255, 255, 255, 0.15);
 }
 
@@ -55,15 +65,21 @@
     color: #7da6ff;
 }
 
+.sidebar-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 10px 16px;
+}
+
 .sidebar-bottom {
     margin-top: auto;
     padding: 16px;
-    display: flex;
-    justify-content: center;
+    display: none;
+    /* Hidden since we moved logout */
 }
 
 .setting-btn {
-    background: rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.15);
     border: none;
     width: 44px;
     height: 44px;
@@ -73,7 +89,7 @@
 }
 
 .setting-btn:hover {
-    background: rgba(255,255,255,0.25);
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .dropdown-menu {

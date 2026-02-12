@@ -51,6 +51,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/payment/{order}/receipt', [PaymentController::class, 'receipt'])
         ->name('payment.receipt');
 
+    Route::get('/payment/{order}/success', [PaymentController::class, 'success'])
+        ->name('payment.success');
+
     // HISTORY
     Route::get('/history-order', [HistoryOrderController::class, 'index'])
         ->name('history.index');
