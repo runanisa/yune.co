@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/productviews.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/historyorder.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/paymenton.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/categorishow.css') }}">
 </head>
 <body>
 
@@ -35,5 +36,29 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const wrapper = document.getElementById('categoryWrapper');
+const btnLeft = document.getElementById('btnLeft');
+const btnRight = document.getElementById('btnRight');
+
+function scrollCategory(direction) {
+    wrapper.scrollBy({
+        left: direction * 120,
+        behavior: 'smooth'
+    });
+
+    setTimeout(updateButtons, 300);
+}
+
+function updateButtons() {
+    btnLeft.disabled = wrapper.scrollLeft <= 0;
+    btnRight.disabled =
+        wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth - 1;
+}
+
+wrapper.addEventListener('scroll', updateButtons);
+window.addEventListener('load', updateButtons);
+</script>
+
 </body>
 </html>

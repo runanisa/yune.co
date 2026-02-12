@@ -14,58 +14,60 @@
     <p class="text-muted">Belum ada product</p>
 @else
 
-<div class="product-view-grid">
+<div class="product-view-wrapper">
+    <div class="product-view-grid">
 
-@foreach ($products as $product)
-    <div class="product-view-card">
+        @foreach ($products as $product)
+            <div class="product-view-card">
 
-        {{-- IMAGE --}}
-        <div class="product-view-image">
-            @if ($product->image)
-                <img src="{{ asset('storage/'.$product->image) }}"
-                     class="product-view-img">
-            @else
-                <div class="product-view-placeholder">
-                    No Image
+                {{-- IMAGE --}}
+                <div class="product-view-image">
+                    @if ($product->image)
+                        <img src="{{ asset('storage/'.$product->image) }}"
+                             class="product-view-img">
+                    @else
+                        <div class="product-view-placeholder">
+                            No Image
+                        </div>
+                    @endif
                 </div>
-            @endif
-        </div>
 
-        {{-- BODY --}}
-        <div class="product-view-body">
-            <div class="product-view-title">
-                {{ $product->name }}
+                {{-- BODY --}}
+                <div class="product-view-body">
+                    <div class="product-view-title">
+                        {{ $product->name }}
+                    </div>
+
+                    <small class="text-muted d-block mb-1">
+                        {{ $product->category->name ?? '-' }}
+                    </small>
+
+                    <div class="product-view-price">
+                        Rp {{ number_format($product->price) }}
+                    </div>
+
+                    @if ($product->stock == 0)
+                        <span class="badge bg-danger">Habis</span>
+                    @else
+                        <span class="badge bg-success">
+                            Stok {{ $product->stock }}
+                        </span>
+                    @endif
+                </div>
+
+                {{-- ACTION --}}
+                <div class="product-view-actions">
+                    <a href="{{ route('product.edit', $product->id) }}"
+                       class="btn btn-product-edit btn-sm">
+                        Edit
+                    </a>
+                </div>
+
             </div>
-
-            <small class="text-muted d-block mb-1">
-                {{ $product->category->name ?? '-' }}
-            </small>
-
-            <div class="product-view-price">
-                Rp {{ number_format($product->price) }}
-            </div>
-
-            @if ($product->stock == 0)
-                <span class="badge bg-danger">Habis</span>
-            @else
-                <span class="badge bg-success">
-                    Stok {{ $product->stock }}
-                </span>
-            @endif
-        </div>
-
-        {{-- ACTION --}}
-        <div class="product-view-actions mt-2">
-            <a href="{{ route('product.edit', $product->id) }}"
-               class="btn btn-product-edit btn-sm">
-                Edit
-            </a>
-        </div>
+        @endforeach
 
     </div>
-@endforeach
-
 </div>
-@endif
 
+@endif
 @endsection

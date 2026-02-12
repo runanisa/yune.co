@@ -39,24 +39,45 @@
         {{-- ================= PRODUK ================= --}}
         <div class="col-md-8">
 
-            {{-- CATEGORY --}}
-            @if($categories->count())
-                <div class="d-flex gap-3 mb-4 overflow-auto">
-                    <a href="/" class="category-card {{ !$categoryId ? 'active' : '' }}">
-                        <p>Semua</p>
-                    </a>
+        {{-- CATEGORY --}}
+        @if($categories->count())
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <h6 class="mb-0">Kategori</h6>
 
-                    @foreach($categories as $category)
-                        <a href="/?category={{ $category->id }}"
-                           class="category-card {{ $categoryId == $category->id ? 'active' : '' }}">
-                            @if($category->image)
-                                <img src="{{ asset('storage/'.$category->image) }}">
-                            @endif
-                            <p>{{ $category->name }}</p>
-                        </a>
-                    @endforeach
-                </div>
-            @endif
+            <div class="d-flex gap-1">
+                <button id="btnLeft"
+                        class="btn btn-light btn-sm category-nav"
+                        onclick="scrollCategory(-1)"
+                        disabled>
+                    ◀
+                </button>
+                <button id="btnRight"
+                        class="btn btn-light btn-sm category-nav"
+                        onclick="scrollCategory(1)">
+                    ▶
+                </button>
+            </div>
+        </div>
+
+        <div class="category-wrapper" id="categoryWrapper">
+            <div class="d-flex gap-3 mb-4 category-scroll">
+                <a href="/" class="category-card {{ !$categoryId ? 'active' : '' }}">
+                    <p>Semua</p>
+                </a>
+
+                @foreach($categories as $category)
+                    <a href="/?category={{ $category->id }}"
+                    class="category-card {{ $categoryId == $category->id ? 'active' : '' }}">
+                        @if($category->image)
+                            <img src="{{ asset('storage/'.$category->image) }}">
+                        @endif
+                        <p>{{ $category->name }}</p>
+                    </a>
+                @endforeach
+            </div>
+        </div>
+        @endif
+
 
             {{-- PRODUCT --}}
             <div class="row">
